@@ -13,7 +13,6 @@ export default function Home() {
             return Alert.alert("Attendee already on the list", "This attendee is already on the list, please add another one.");
         }
         setAttendees(prev => [...prev, name])
-        return console.log("Added attendee")
     }
 
     const handleRemoveAttendee = (name: string) => {
@@ -40,7 +39,7 @@ export default function Home() {
                     placeholder='Attendee name'
                     placeholderTextColor='#6b6b6b'
                     value={inputValue}
-                    onChange={(e) => setInputValue(e.nativeEvent.text)}
+                    onChangeText={setInputValue}
                 />
                 <TouchableOpacity style={styles.button} onPress={() => handleAddAttendee(inputValue)}>
                     <Text style={styles.buttonText}>+</Text>
